@@ -1,8 +1,23 @@
 Rails.application.routes.draw do
+
+
   get 'posts/show'
 
   get 'posts/new'
   resources :posts
+  resources :users do
+               member do
+                     put "like", to: "users#follow"
+                     put "unlike", to: "users#unfollow"
+               end
+       end
+       resources :posts do
+               member do
+                     put "like", to: "posts#upvote"
+                     put "dislike", to: "posts#downvote"
+
+               end
+       end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,10 @@
 <p><%= @post.title %></p>
-
+<%= link_to  like_post_path(@post.id), method: :put  do %>
+赞成
+<% end %>
+<%= link_to  dislike_post_path(@post.id), method: :put  do %>
+不赞成
+<% end %>
 <p>默认属性</p>
 <%= social_share_button_tag(@post.title) %>
 <p>自己加上一些属性</p>

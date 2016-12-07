@@ -1,0 +1,5 @@
+<p><%= @user.name %></p>
+<%= link_to  like_user_path(@user.id), method: :put  do %>
+<p>关注<%= @user.name %></p>
+<% end %>
+<p>关注数：<%= @size %></p>
